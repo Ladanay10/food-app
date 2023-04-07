@@ -1,0 +1,33 @@
+.item {
+	background: var(--bg-dark);
+	display: flex;
+	flex-direction: column;
+	text-align: center;
+	padding: 24px;
+	width: 192px;
+	border-radius: 16px;
+	transition: 0.3s all;
+}
+
+.item:hover {
+	box-shadow: 0px 8px 20px rgba(234, 124, 105, 0.32);
+}
+
+.name {
+	font-weight: 500;
+	font-size: 14px;
+	line-height: 130%;
+	padding: 16px 0px 8px 0px;
+}
+
+.price {
+	font-size: 14px;
+	padding-bottom: 4px;
+	line-height: 140%;
+}
+
+.stock {
+	font-size: 14px;
+	line-height: 140%;
+	color: var(--text-light);
+}

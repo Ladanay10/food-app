@@ -1,0 +1,162 @@
+.dashboard {
+	display: flex;
+	/* justify-content: space-between; */
+	/* gap: 0px; */
+	width: 80%;
+}
+
+.dashboard_right {
+	display: flex;
+	flex-direction: column;
+	gap: 10px;
+}
+
+.dashboard_content {
+	padding: 24px;
+	width: 100%;
+}
+
+.dashboard_top {
+	border-bottom: 1px solid #393C49;
+	width: 100%;
+	padding-bottom: 20px;
+}
+
+.title {
+	font-weight: 600;
+	font-size: 28px;
+	line-height: 140%;
+}
+
+.date {
+	font-size: 16px;
+	line-height: 140%;
+	color: #ABBBC2;
+}
+
+.dashboard_stats {
+	margin-top: 24px;
+	display: flex;
+	gap: 25px;
+}
+
+.order_report {
+	margin-top: 24px;
+	padding: 24px;
+	background: var(--bg-dark);
+	height: 432px;
+	border-radius: 8px;
+	width: 650px;
+}
+
+.order_report_top {
+	display: flex;
+	justify-content: space-between;
+}
+
+.order_title {
+	font-weight: 600;
+	font-size: 20px;
+	line-height: 140%;
+}
+
+.order_table {
+	margin-top: 16px;
+	display: flex;
+	justify-content: space-around;
+	border-bottom: 1px solid #393C49;
+	padding-bottom: 16px;
+}
+
+.order_table>li {
+	font-weight: 600;
+	font-size: 14px;
+	line-height: 140%;
+	/* display: flex; */
+	/* gap: 30px; */
+}
+
+.order_table>li:nth-child(1) {
+	flex: 1;
+}
+
+.order_table>li:nth-child(2) {
+	flex: 2;
+	margin-right: -180px;
+}
+
+
+
+.order_table>li:last-child {
+	margin-left: 40px;
+	margin-right: 50px;
+}
+
+.order_info {
+	margin-top: 16px;
+	display: flex;
+	flex-direction: column;
+	gap: 20px;
+	overflow-y: scroll;
+	height: 300px;
+}
+
+.info_item {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	font-size: 14px;
+	line-height: 140%;
+	color: #E0E6E9;
+}
+
+.user_info {
+	display: flex;
+	gap: 16px;
+	align-items: center;
+	width: 110px;
+}
+
+.user_info>img {
+	width: 34px;
+	height: 34px;
+	border-radius: 50%;
+	object-fit: cover;
+}
+
+.info_item>p {
+	display: block;
+	width: 150px;
+}
+
+.info_item>span {
+	display: block;
+}
+
+
+.status {
+	font-weight: 500;
+	font-size: 14px;
+	line-height: 130%;
+	border: none;
+	width: 90px;
+	background: rgba(217, 76, 76, 0.2);
+	color: #d2b4b4;
+	border-radius: 30px;
+	padding: 5px 12px;
+}
+
+.status_pending {
+	color: #FFB572;
+	background: rgba(255, 181, 114, 0.2);
+}
+
+.status_completed {
+	color: #50D1AA;
+	background: rgba(107, 226, 190, 0.24);
+}
+
+.status_preparing {
+	background: rgba(146, 144, 254, 0.2);
+	color: #9290FE;
+}

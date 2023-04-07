@@ -1,0 +1,50 @@
+.skeleton {
+	flex-direction: column;
+	display: flex;
+	gap: 10px;
+	align-items: center;
+	position: relative;
+	width: 459px;
+	background: var(--bg-dark);
+	padding: 24px;
+	height: 100%;
+}
+
+.skeleton>h3 {
+	font-size: 30px;
+}
+
+.skeleton>p {
+	font-size: 20px;
+	color: var(--primary);
+}
+
+.skeleton>svg {
+	color: #FF7CA3;
+}
+
+.skeleton>img {
+	width: 500px;
+	height: 500px;
+	object-fit: contain;
+	position: absolute;
+}
+
+.skeleton_setting {
+	text-align: center;
+}
+
+.skeleton_setting>h3 {
+	font-size: 30px;
+	color: var(--primary);
+
+}
+
+.skeleton_setting>p {
+	font-size: 20px;
+	color: #ABBBC2;
+}
+.skeleton_setting > img {
+	object-fit: contain;
+	width: 510px;
+}

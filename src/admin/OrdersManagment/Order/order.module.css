@@ -1,0 +1,90 @@
+.users_wrapper {
+	display: flex;
+	justify-content: space-between;
+	position: relative;
+	align-items: center;
+}
+
+.user {
+	flex: 0;
+}
+
+.user_info {
+	margin-top: 20px;
+	display: flex;
+	align-items: center;
+	gap: 5px;
+	width: 140px;
+}
+
+.user_info>img {
+	width: 34px;
+	height: 34px;
+	border-radius: 50%;
+}
+
+.user_info>p {
+	font-weight: 500;
+	color: #E0E6E9;
+}
+
+.menu {
+	position: absolute;
+	left: 185px;
+}
+
+.menu>p {
+	margin-top: 20px;
+	display: block;
+	max-width: 450px;
+}
+
+.price {
+	position: absolute;
+	right: 280px;
+	width: 100px;
+	text-align: center;
+	color: #E0E6E9;
+}
+
+.price>p {
+	margin-top: 20px;
+}
+
+.status {
+	position: absolute;
+	right: 120px;
+	width: 100px;
+	text-align: center;
+}
+
+.status>h3 {
+	margin-top: 20px;
+	border-radius: 30px;
+	font-weight: 500;
+	font-size: 14px;
+	line-height: 130%;
+	padding: 4px 12px;
+	background: rgba(255, 0, 60, 0.2);
+}
+
+.status_pending>h3 {
+	color: #FFB572;
+	background: rgba(255, 181, 114, 0.2);
+}
+
+.status_prepering>h3 {
+	background: rgba(146, 144, 254, 0.2);
+	color: #9290FE;
+}
+
+.status_completed>h3 {
+	color: #50D1AA;
+	background: rgba(107, 226, 190, 0.24);
+}
+
+.btns {
+	margin-top: 20px;
+	display: flex;
+	gap: 8px;
+}

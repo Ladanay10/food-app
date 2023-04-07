@@ -1,0 +1,43 @@
+.info {
+	padding: 24px 24px 0px 0px;
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+}
+
+.info_content {
+	display: flex;
+	flex-direction: column;
+	gap: 3px;
+}
+
+.title {
+	font-weight: 600;
+	font-size: 28px;
+	line-height: 140%;
+}
+
+.date {
+	font-size: 16px;
+	line-height: 140%;
+	color: var(--text-light);
+}
+.bakset_icon {
+	/* color: #fff; */
+	position: relative;
+}
+.basket_num {
+	position: absolute;
+	/* width: 12px;
+	height: 12px; */
+	padding: 3px 7px;
+	background: var(--bg-dark);
+	border-radius: 50%;
+	right: -5px;
+	top: -2px;
+	font-size: 10px;
+	display: flex;
+	color: var(--primary);
+	align-items: center;
+	justify-content: center;
+}

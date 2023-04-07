@@ -1,0 +1,50 @@
+.new_item {
+	cursor: pointer;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	gap: 20px;
+	width: 221px;
+	height: 300px;
+	color: #EA7C69;
+	border: 1.2px dashed #EA7C69;
+	border-radius: 8px;
+}
+
+.new_item span {
+	font-weight: 600;
+	font-size: 16px;
+	line-height: 140%;
+}
+
+.ant-modal .ant-modal-content {
+	background: #EA7C69;
+}
+
+.form {
+	display: flex;
+	flex-direction: column;
+	gap: 10px;
+}
+.form label {
+	font-size: 18px;	
+}
+.info {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+}
+.select {
+	padding: 10px;
+	background: var(--bg-dark);
+	border: 1px solid var(--gray);
+	border-radius: 8px;
+	color: #fff;
+	z-index: 10;
+} 
+.btns {
+	display: flex;
+	margin-left: auto;
+	gap: 15px;
+}

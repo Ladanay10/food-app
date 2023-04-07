@@ -1,0 +1,21 @@
+.content {
+	padding: 24px 24px 0px 0px;
+	height: 567px;
+	overflow-y: scroll;
+	
+}
+
+.top_content {
+	display: flex;
+	justify-content: space-between;
+	margin-left: 15px;
+}
+
+.dishes_items {
+	margin-top: 15px;
+	margin-left: 10px;
+	display: flex;
+	gap: 30px;
+	flex-wrap: wrap;
+	/* overflow-y: scroll; */
+}

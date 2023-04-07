@@ -1,0 +1,19 @@
+.content {
+	display: flex;
+	justify-content: space-between;
+	flex: 1;
+	overflow-y: scroll;
+}
+
+.content_items {
+	padding-left: 24px;
+	display: flex;
+	flex-direction: column;
+	flex-basis: 100%;
+}
+
+@media screen and (max-width:768px) {
+	.basket_content {
+		display: none;
+	}
+}

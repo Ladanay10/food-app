@@ -1,0 +1,17 @@
+.table {
+	padding: 24px 0;
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	border-bottom: 1px solid var(--gray);
+}
+
+.table_end {
+	display: flex;
+	align-items: center;
+	gap: 33px;
+
+}
+.table_end > p {
+	padding-right: 5px;
+}

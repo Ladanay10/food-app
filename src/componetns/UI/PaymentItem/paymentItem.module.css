@@ -1,0 +1,25 @@
+.method_item {
+	display: flex;
+	color: #ABBBC2;
+	flex-direction: column;
+	align-items: center;
+	gap: 5px;
+	justify-content: center;
+	position: relative;
+	border: 1px solid #393C49;
+	border-radius: 8px;
+	padding: 10px;
+	width: 101px;
+}
+
+.method_item_active {
+	border: 1px solid #ABBBC2;
+	color: #fff;
+
+}
+
+.check {
+	position: absolute;
+	top: 5px;
+	right: 5px;
+}

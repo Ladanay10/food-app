@@ -1,0 +1,37 @@
+.content {
+	position: relative;
+	height: 100%;
+}
+
+.top_bar {
+	padding-bottom: 20px;
+	border-bottom: 1px solid #393C49;
+}
+
+.table {
+	margin-top: 20px;
+	display: flex;
+	justify-content: space-between;
+
+}
+
+.table1 {
+	display: flex;
+	align-items: center;
+	gap: 150px;
+	flex: 1;
+}
+
+.table2 {
+	display: flex;
+	align-items: center;
+	gap: 100px;
+}
+
+.table>li:nth-child(1) {}
+
+.users {
+	display: flex;
+	flex-direction: column;
+	gap: 10px;
+}

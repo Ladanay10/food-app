@@ -1,0 +1,44 @@
+.option {
+	padding: 24px;
+	width: 275px;
+	background: var(--bg-dark);
+	display: flex;
+	gap: 10px;
+	color: #fff;
+
+}
+
+.icon {
+	margin-top: 5px;
+
+}
+
+.option__text p {
+	font-weight: 500;
+	font-size: 14px;
+	line-height: 130%;
+
+}
+
+.option__text span {
+	font-weight: 400;
+	font-size: 12px;
+	line-height: 140%;
+	color: #ABBBC2 !important;
+}
+
+.active__option {
+	background: rgba(234, 124, 105, 0.26);
+	color: #EA7C69 !important;
+	position: relative;
+}
+
+.active__option::after {
+	content: '';
+	position: absolute;
+	width: 4px;
+	height: 40px;
+	background: #EA7C69;
+	border-radius: 30px;
+	right: 0;
+}

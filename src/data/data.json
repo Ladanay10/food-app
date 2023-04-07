@@ -1,0 +1,26 @@
+[
+	{
+		"id": 1,
+		"foodTitle": "Hot Dishes"
+	},
+	{
+		"id": 2,
+		"foodTitle": "Cold Dishes"
+	},
+	{
+		"id": 3,
+		"foodTitle": "Soup"
+	},
+	{
+		"id": 4,
+		"foodTitle": "Grill"
+	},
+	{
+		"id": 5,
+		"foodTitle": "Appetizer"
+	},
+	{
+		"id": 6,
+		"foodTitle": "Dessert"
+	}
+]

@@ -1,0 +1,103 @@
+.content {
+	width: 439px;
+	padding: 24px;
+	background: var(--bg-dark);
+	border-left: 1px solid #393C49;
+	display: flex;
+	justify-content: space-between;
+	flex-direction: column;
+	height: 100%;
+	z-index: 999;
+}
+
+.content_info {
+	max-width: 387px;
+	align-items: flex-start;
+	position: relative;
+}
+
+.content_info::after {
+	margin-top: 20px;
+	content: '';
+	position: absolute;
+	width: 100%;
+	height: 1px;
+	background: #393C49;
+}
+
+.title {
+	font-weight: 600;
+	font-size: 28px;
+	line-height: 140%;
+}
+
+.text {
+	font-weight: 500;
+	font-size: 16px;
+	line-height: 140%;
+	color: #ABBBC2;
+}
+
+.method {
+	margin-top: 40px;
+}
+
+.method_title {
+	font-weight: 600;
+	font-size: 20px;
+	line-height: 140%;
+}
+
+.method__items {
+	margin-top: 15px;
+	display: flex;
+	gap: 8px;
+}
+
+
+
+.form {
+	margin-top: 20px;
+	display: flex;
+	flex-direction: column;
+	gap: 15px;
+}
+
+.form>input {
+	width: 100%;
+}
+
+.form>div {
+	display: flex;
+	gap: 16px;
+}
+
+
+.form_bottom_div {
+	display: flex;
+	flex-direction: column;
+	gap: 10px;
+}
+
+.form_bottom_div>select {
+	padding: 15px;
+}
+
+.form_bottom_div>input {
+	width: 187px;
+}
+
+.form_bottom_div>select {
+	width: 187px;
+}
+
+.btns {
+	display: flex;
+	margin-top: 40px;
+	gap: 15px;
+}
+
+.btns>button {
+	padding: 14px;
+	width: 50%;
+}
