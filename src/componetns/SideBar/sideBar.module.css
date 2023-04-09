@@ -48,17 +48,30 @@
 	.content {
 		width: 70px;
 	}
-	.icons {
-	}
+
+	.icons {}
+
 	.iconBlock {
 		padding: 10px;
 	}
+
 	.active {
 		padding: 10px;
 	}
 }
-@media screen and (max-width:768px) { 
+
+@media screen and (max-width:500px) {
 	.content {
-		/* display: none; */
+		display: none;
 	}
+	.content_mobile {
+		display: block;
+		width: 100%;
+		position: absolute;
+	}
+	.content_mobile > .icons {
+		display: flex;
+	}
+	.icons_mobile {}
+
 }

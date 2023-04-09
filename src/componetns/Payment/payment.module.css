@@ -8,6 +8,7 @@
 	flex-direction: column;
 	height: 100%;
 	z-index: 999;
+
 }
 
 .content_info {
@@ -100,4 +101,75 @@
 .btns>button {
 	padding: 14px;
 	width: 50%;
+}
+
+@media screen and (max-width:500px) {
+	.content {
+		position: absolute;
+		width: 100%;
+		height: 100%;
+		z-index: 2003;
+	}
+
+	.content_info::after {
+		content: '';
+		margin-top: 10px;
+		position: absolute;
+		width: 100%;
+		height: 1px;
+		background: #393C49;
+	}
+
+	.title {
+		font-size: 20px;
+	}
+
+	.text {
+		font-size: 14px;
+	}
+
+	.method {
+		margin-top: 20px;
+		font-size: 15px;
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		flex-direction: column;
+	}
+
+	.method_title {
+		font-size: 16px;
+	}
+
+	.method__items {
+		font-size: 14px;
+	}
+
+	.form {
+		margin-top: 10px;
+		gap: 8px;
+	}
+
+	.form>div {
+		display: flex;
+		gap: 10px;
+		justify-content: space-between;
+	}
+
+	.form_bottom_div>input {
+		width: 110px;
+	}
+
+	.form_bottom_div>select {
+		width: 110px;
+	}
+
+	.form_bottom_div>.select {
+		padding: 10px;
+	}
+
+	.btns>button {
+		padding: 5px 8px;
+		font-size: 14px;
+	}
 }

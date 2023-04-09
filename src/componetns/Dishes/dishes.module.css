@@ -2,13 +2,14 @@
 	padding: 24px 24px 0px 0px;
 	height: 567px;
 	overflow-y: scroll;
-	
+
 }
 
 .top_content {
 	display: flex;
 	justify-content: space-between;
 	margin-left: 15px;
+	align-items: center;
 }
 
 .dishes_items {
@@ -18,4 +19,18 @@
 	gap: 30px;
 	flex-wrap: wrap;
 	/* overflow-y: scroll; */
+}
+
+
+@media screen and (max-width:500px) {
+	.content {
+		padding-top: 10px;
+	}
+
+	.title {
+		font-size: 18px;
+	}
+	.dishes_items {
+		gap: 10px;
+	}
 }

@@ -8,8 +8,9 @@ import { Order } from './Order/Order';
 import { Payment } from '../Payment/Payment';
 import { AiOutlinePlus } from 'react-icons/ai';
 import { Skeleton } from '../UI/Skeleton/Skeleton';
-
-export const Basket = () => {
+import { motion } from 'framer-motion';
+import { BiArrowBack } from 'react-icons/bi';
+export const Basket = ({ isBasketActive, setIsBasketActive }) => {
 
 	const dishesInBasket = useSelector(state => state.reducerAddItem.basketItems);
 	const [value, setValue] = useState('');
@@ -17,7 +18,6 @@ export const Basket = () => {
 	const handleClick = (e) => {
 		setValue(e.target.value);
 		e.preventDefault();
-		
 	}
 	return (
 		<>
@@ -40,13 +40,21 @@ export const Basket = () => {
 									</button>
 								</div> :
 								<>
-									<h1>Your basket</h1>
-									<form value={value} className={cl.btns}>
-										<Button defaultV={value} onClick={handleClick} value={'Dine In'} >Dine In</Button>
-										<Button defaultV={value} onClick={handleClick} value={'To Go'}>To Go</Button>
-										<Button defaultV={value} onClick={handleClick} value={'Delivery'} >Delivery</Button>
-									</form>
-									<Table />
+									<div className={cl.basket_content}>
+										<BiArrowBack
+											color='#EA7C69'
+											size={23}
+											className={cl.icon}
+											onClick={() => setIsBasketActive(false)}
+										/>
+										<h1>Your basket</h1>
+										<form value={value} className={cl.btns}>
+											<Button defaultV={value} onClick={handleClick} value={'Dine In'} >Dine In</Button>
+											<Button defaultV={value} onClick={handleClick} value={'To Go'}>To Go</Button>
+											<Button defaultV={value} onClick={handleClick} value={'Delivery'} >Delivery</Button>
+										</form>
+										<Table />
+									</div>
 								</>
 						}
 
@@ -54,7 +62,6 @@ export const Basket = () => {
 							{
 								dishesInBasket.map((item) => (
 									<BasketItem
-
 										key={item.id}
 										dish={item}
 									/>
@@ -66,9 +73,8 @@ export const Basket = () => {
 					</div>
 				) : <Skeleton />}
 				{
-					payment && <Payment value={value} setPayment={setPayment} />
+					payment && <Payment payment={payment} value={value} setPayment={setPayment} />
 				}
-
 			</div>
 
 		</>

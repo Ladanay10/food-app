@@ -23,3 +23,10 @@
 	top: 5px;
 	right: 5px;
 }
+
+@media screen and (max-width:500px) {
+	.method_item {
+		padding: 5px;
+		width: 80px;
+	}
+}

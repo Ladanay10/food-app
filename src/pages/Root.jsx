@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useState } from 'react'
 import { Route, Routes } from 'react-router-dom'
 import { Basket } from '../componetns/Basket/Basket'
 import { SideBar } from '../componetns/SideBar/SideBar'
@@ -8,12 +8,27 @@ import { HomePage } from './Home/HomePage'
 import { LogOut } from './LogOut/LogOut'
 import { Settings } from './Settings/Settings'
 import { Shop } from './Shop/Shop'
+import { RxTextAlignRight, RxCross2 } from 'react-icons/rx';
+// const Mobile = () => {
+// 	return (
+// 		<div>
 
+// 		</div>
+// 	)
+// }
 export const Root = () => {
+	const [isMobile, setIsMobile] = useState(false);
 
 	return (
 		<>
-			<SideBar />
+			<div className={'mobile'}>
+				{
+					<RxTextAlignRight onClick={() => setIsMobile(!isMobile)} size={25} color='#EA7C69' />
+				}
+			</div>
+			{
+				<SideBar isMobile={isMobile} setIsMobile={setIsMobile} />
+			}
 			<Routes>
 				<Route path='/' element={<ProtectedRoute />}>
 					<Route path='home' element={<HomePage />} />

@@ -6,3 +6,9 @@
 	color: #fff;
 	z-index: 10;
 }
+
+@media screen and (max-width:500px) {
+	.select {
+		padding: 8px 9px;
+	}
+}

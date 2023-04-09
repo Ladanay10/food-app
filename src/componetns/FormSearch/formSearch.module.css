@@ -12,3 +12,8 @@
 	border: none;
 	background: transparent;
 }
+@media screen and (max-width:500px) {
+	.search {
+		display: none;
+	}
+ }

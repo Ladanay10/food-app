@@ -11,6 +11,7 @@ import { MostOrdered } from '../../componetns/MostOrdered/MostOrdered';
 import { MostType } from '../../componetns/MostType/MostType';
 import useGetData from '../../hooks/useGetData';
 import { Loader } from '../../componetns/UI/Loader/Loader';
+import { motion } from 'framer-motion';
 export const Dashboard = () => {
 	const date = new Date().toDateString();
 	const { data: dataOrders, loading } = useGetData('orders');
@@ -22,7 +23,7 @@ export const Dashboard = () => {
 	const orders = filterValue ? dataOrders.filter(item => item.orderStatus === filterValue) : dataOrders;
 	return (
 		<div className={cl.dashboard}>
-			<div className={cl.dashboard_content}>
+			<motion.div initial={{ x: -300 }} animate={{ x: 0 }} className={cl.dashboard_content}>
 				<div className={cl.dashboard_top}>
 					<h1 className={cl.title}>Dashboard</h1>
 					<span className={cl.date}>{date}</span>
@@ -100,11 +101,11 @@ export const Dashboard = () => {
 
 					</div>
 				</div>
-			</div>
-			<div className={cl.dashboard_right}>
+			</motion.div>
+			<motion.div initial={{ x: 300 }} animate={{ x: 0 }} className={cl.dashboard_right}>
 				<MostOrdered />
 				<MostType />
-			</div>
+			</motion.div>
 		</div>
 	)
 }

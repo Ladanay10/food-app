@@ -8,6 +8,7 @@ import { Input } from '../../../componetns/UI/Input/Input';
 import { Modal } from '../../../componetns/UI/Modal/Modal';
 import { dataBase, storage } from '../../../firebase';
 import cl from './newItem.module.css';
+import { toast } from 'react-toastify';
 
 export const NewItem = () => {
 	const [isModalOpen, setIsModalOpen] = useState(false);
@@ -49,11 +50,12 @@ export const NewItem = () => {
 						})
 				})
 			})
-			setLoading(false)
-			console.log('all is OK');
+			setLoading(false);
+			toast.success('Item added');
+			// console.log('all is OK');
 			setIsModalOpen(false)
 		} catch (error) {
-			console.log(error);
+			toast.error(error.message);
 		}
 	}
 	return (

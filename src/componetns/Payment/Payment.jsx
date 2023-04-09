@@ -10,7 +10,7 @@ import { dataBase } from '../../firebase';
 import useAuth from '../../hooks/useAuth';
 import { CLEAR_ITEMS } from '../../store/types';
 import { toast } from 'react-toastify';
-export const Payment = ({ setPayment, value }) => {
+export const Payment = ({ setPayment, value, payment }) => {
 	const basketItems = useSelector(state => state.reducerAddItem.basketItems)
 	const { currentUser } = useAuth();
 	const [orderPlace, setOrderPlace] = useState(value);

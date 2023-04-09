@@ -30,10 +30,12 @@ export const navIcons = [
 		id: 5,
 		img: <MdOutlineMarkunread size={25} />,
 		isActive: false,
+		src: 'sada'
 	},
 	{
 		id: 6,
 		img: <IoNotificationsOutline size={25} />,
+		src: 'sadad'
 	},
 	{
 		id: 7,

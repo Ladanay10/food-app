@@ -44,7 +44,22 @@
 	font-size: 20px;
 	color: #ABBBC2;
 }
-.skeleton_setting > img {
+
+.skeleton_setting>img {
 	object-fit: contain;
 	width: 510px;
+}
+
+@media screen and (max-width: 500px) {
+	.skeleton {
+		z-index: 1050;
+	}
+
+	.skeleton>h3 {
+		padding-top: 50px;
+	}
+
+	.skeleton>img {
+		margin-top: 50px;
+	}
 }

@@ -7,7 +7,6 @@ export const Order = ({ payment, setPayment }) => {
 	const basketItem = useSelector(state => state.reducerAddItem.basketItems)
 	const price = basketItem.map(value => value.price * 1).reduce((prev, curr) => prev + curr)
 	const handleBuyProduct = () => {
-
 		setPayment(true);
 	}
 	return (
@@ -21,7 +20,13 @@ export const Order = ({ payment, setPayment }) => {
 				<span className={cl.price}>${price}</span>
 			</div>
 			{
-				payment ? <></> : <Button primary onClick={handleBuyProduct}>Continue to Payment</Button>
+				payment ? <></> :
+					<Button
+						primary
+						onClick={handleBuyProduct}
+					>
+						Continue to Payment
+					</Button>
 			}
 
 		</div>

@@ -15,7 +15,7 @@ export const UsersManagment = () => {
 		<div className={cl.content}>
 			<div className={cl.top_bar}>
 				<h2 className={cl.title2}>
-					Products Management
+					Users Management
 				</h2>
 			</div>
 			<div className={cl.table}>

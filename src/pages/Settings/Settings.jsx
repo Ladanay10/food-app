@@ -10,13 +10,14 @@ import { OrdersManagment } from '../../admin/OrdersManagment/OrdersManagment';
 import { FaUsersCog } from 'react-icons/fa';
 import { UsersManagment } from '../../admin/UsersManagment/UsersManagment';
 import { Soon } from '../../componetns/Soon/Soon';
+import { motion } from 'framer-motion';
 export const Settings = () => {
 
 	return (
 		<div className={cl.setting_page}>
 			<h1 className={cl.title}>Settings</h1>
 			<div className={cl.content}>
-				<div className={cl.settings_options}>
+				<motion.div initial={{ x: -300 }} animate={{ x: 0 }} className={cl.settings_options}>
 					<Option
 						path='color-mode'
 						icon={<RiRestartLine />}
@@ -41,8 +42,8 @@ export const Settings = () => {
 						title='Users Management'
 						desc='Manage your users, etc'
 					/>
-				</div>
-				<div className={cl.content__right}>
+				</motion.div>
+				<motion.div initial={{ x: 300 }} animate={{ x: 0 }} className={cl.content__right}>
 
 					<Routes>
 						<Route />
@@ -52,7 +53,7 @@ export const Settings = () => {
 						<Route path='/orders-managment' element={<OrdersManagment />} />
 						<Route path='/users-managment' element={<UsersManagment />} />
 					</Routes>
-				</div>
+				</motion.div>
 			</div>
 		</div>
 

@@ -31,3 +31,25 @@
 	line-height: 140%;
 	color: var(--text-light);
 }
+
+@media screen and (max-width:500px) {
+	.item {
+		padding: 10px;
+		width: 139px;
+		align-items: center;
+	}
+
+	.item>img {
+		width: 90px;
+		height: 90px;
+	}
+
+	.name, .price, .stock {
+		font-size: 12px;
+	}
+	.name {
+		padding-top: 10px;
+	}
+
+	
+}

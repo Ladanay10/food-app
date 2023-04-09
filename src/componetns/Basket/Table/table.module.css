@@ -12,6 +12,21 @@
 	gap: 33px;
 
 }
-.table_end > p {
+
+.table_end>p {
 	padding-right: 5px;
+}
+
+@media screen and (max-width:500px) {
+	.table {
+		padding: 12px 0;
+	}
+
+	.table>* {
+		font-size: 14px;
+	}
+
+	.table_end {
+		gap: 25px;
+	}
 }

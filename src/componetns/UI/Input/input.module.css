@@ -18,3 +18,14 @@
 	padding: 14px;
 
 }
+
+@media screen and (max-width: 500px) {
+	.small {
+		width: 35px;
+		height: 35px;
+		padding: 10px;
+	}
+	.input {
+		padding: 10px;
+	}
+}

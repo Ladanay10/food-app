@@ -44,8 +44,22 @@ select {
 	margin: 0 auto;
 	display: flex;
 	height: 100vh;
-
 }
+
 .loader {
 	text-align: center;
+}
+
+.mobile {
+	display: none;
+}
+
+@media screen and (max-width:500px) {
+	.mobile {
+		position: absolute;
+		right: 10px;
+		top: 25px;
+		z-index: 10000;
+		display: block;
+	}
 }

@@ -3,6 +3,7 @@
 	justify-content: space-between;
 	flex: 1;
 	overflow-y: scroll;
+	position: relative;
 }
 
 .content_items {
@@ -12,8 +13,45 @@
 	flex-basis: 100%;
 }
 
+.basket_icon {
+	display: none;
+}
+
 @media screen and (max-width:768px) {
 	.basket_content {
+		/* position: absolute; */
+		/* height: 100%; */
+		/* width: 100%; */
 		display: none;
 	}
+}
+
+@media screen and (max-width:500px) {
+	.basket_content_active {
+		position: absolute;
+		height: 100%;
+		width: 100%;
+	}
+
+	.basket_icon {
+		display: block;
+		position: absolute;
+		right: 50px;
+		top: 24px;
+		z-index: 2000;
+	}
+
+	.basket_icon>span {
+		position: absolute;
+		background-color: #1F1D2B;
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		font-size: 10px;
+		border-radius: 50%;
+		padding: 3px 7px;
+		right: -4px;
+		top: -6px;
+	}
+
 }

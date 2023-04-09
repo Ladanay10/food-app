@@ -7,7 +7,7 @@ import { Link } from 'react-router-dom';
 
 export const Info = () => {
 	const date = new Date().toDateString();
-	const items = useSelector(state => state.reducerAddItem.basketItems);
+	// const items = useSelector(state => state.reducerAddItem.basketItems);
 
 	return (
 		<div className={cl.info}>
