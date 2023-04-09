@@ -25,7 +25,7 @@ export const Register = () => {
 		try {
 			const userCredetial = await createUserWithEmailAndPassword(auth, emailValue, passwordValue)
 			const user = userCredetial.user;
-			const storageRef = ref(storage, `images/${Date.now() + nameValue}`);
+			const storageRef = ref(storage, `images/${Date.now()}`);
 
 			const uploadTask = uploadBytesResumable(storageRef, file)
 			uploadTask.on((error) => {
