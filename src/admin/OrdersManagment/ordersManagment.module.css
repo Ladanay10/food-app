@@ -28,10 +28,17 @@
 	gap: 100px;
 }
 
-.table>li:nth-child(1) {}
+/* .table>li:nth-child(1) {} */
 
 .users {
 	display: flex;
 	flex-direction: column;
 	gap: 10px;
+}
+
+@media screen and (max-width:500px) {
+	.table {
+		display: none;
+	}
+	
 }

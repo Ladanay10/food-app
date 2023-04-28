@@ -13,10 +13,12 @@
 .small {
 	font-size: 16px;
 	text-align: center;
-	width: 48px;
+	width: 58px;
 	height: 48px;
-	padding: 14px;
-
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	padding: 10px 8px !important;
 }
 
 @media screen and (max-width: 500px) {
@@ -25,6 +27,7 @@
 		height: 35px;
 		padding: 10px;
 	}
+
 	.input {
 		padding: 10px;
 	}

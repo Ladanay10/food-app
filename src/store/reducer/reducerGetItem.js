@@ -1,18 +1,19 @@
 // import { dishesData } from '../../../data/dishesData'
 import { SEARC_ITEMS, SET_DEFAULT } from '../types';
-import { dishesData } from '../../data/dishesData';
 
 
 const initialState = {
-	dishes: [...dishesData]
+	searchValue: ''
 };
 
 export function reducerGetItem(state = initialState, action) {
+	// const items = [action.payload].length > 1 && [action.payload].filter((item) => item.title);
+	// console.log(items);
 	switch (action.type) {
 		case SEARC_ITEMS:
-			return { ...state, dishes: state.dishes.filter((value) => (value.title.toLowerCase().includes(action.payload.toLowerCase()))) }
-		case SET_DEFAULT:
-			return { dishes: [...dishesData] }
+			return { ...state, searchValue: action.payload}
+		// case SET_DEFAULT:
+		// 	return { dishes: [] }
 		default: {
 			return state;
 		}

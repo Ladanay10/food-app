@@ -69,11 +69,36 @@
 }
 
 .login_page>p {
-	margin-top: 15px;
+	margin: 15px 0;
 	display: flex;
 	gap: 8px;
 }
 
 .login_page>p>a>span {
+	color: var(--primary);
+}
+
+.login_google {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	gap: 15px;
+	color: var(--text-light);
+
+}
+
+.login_googleIcon {
+	display: flex;
+	align-items: center;
+	gap: 5px;
+	border: 1px solid var(--primary);
+	padding: 10px;
+	border-radius: 10px;
+	transition: 0.5s ease;
+	color: #fff;
+}
+
+.login_googleIcon:hover {
+	transform: scale(1.1);
 	color: var(--primary);
 }

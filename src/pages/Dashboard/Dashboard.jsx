@@ -68,38 +68,41 @@ export const Dashboard = () => {
 							<option value="Pending">Panding</option>
 						</select>
 					</div>
-					<div className={cl.order_table}>
-						<li>Customer</li>
-						<li>Menu</li>
-						<li>Total Payment</li>
-						<li>Status</li>
-					</div>
-					<div className={cl.order_info}>
-						{
-							loading ? <Loader /> :
-								orders.length ?
-									orders.map((order) => (
-										<div key={order.id} className={cl.info_item}>
-											<div className={cl.user_info}>
-												<img src={!order.userIMG ? ava : order.userIMG} alt="ava" />
-												<h5>{order.displayName}</h5>
+					<div className={cl.order_mobile}>
+						<div className={cl.order_table}>
+							<li>Customer</li>
+							<li>Menu</li>
+							<li>Total Payment</li>
+							<li>Status</li>
+						</div>
+						<div className={cl.order_info}>
+							{
+								loading ? <Loader /> :
+									orders.length ?
+										orders.map((order) => (
+											<div key={order.id} className={cl.info_item}>
+												<div className={cl.user_info}>
+													<img src={!order.userIMG ? ava : order.userIMG} alt="ava" />
+													<h5>{order.displayName}</h5>
+												</div>
+												<p>{order.order[0].title}</p>
+												<span>${order.totalPrice}</span>
+												<button className={order.orderStatus === 'Completed' ?
+													cl.status + ' ' + cl.status_completed : cl.status &&
+														order.orderStatus === 'Pending' ?
+														cl.status + ' ' + cl.status_pending : cl.status &&
+															order.orderStatus === 'Preparing' ?
+															cl.status + ' ' + cl.status_preparing : cl.status
+												} >
+													{order.orderStatus}
+												</button>
 											</div>
-											<p>{order.order[0].title}</p>
-											<span>${order.totalPrice}</span>
-											<button className={order.orderStatus === 'Completed' ?
-												cl.status + ' ' + cl.status_completed : cl.status &&
-													order.orderStatus === 'Pending' ?
-													cl.status + ' ' + cl.status_pending : cl.status &&
-														order.orderStatus === 'Preparing' ?
-														cl.status + ' ' + cl.status_preparing : cl.status
-											} >
-												{order.orderStatus}
-											</button>
-										</div>
-									)) : <div>Now we don't have orders</div>
-						}
+										)) : <div>Now we don't have orders</div>
+							}
 
+						</div>
 					</div>
+
 				</div>
 			</motion.div>
 			<motion.div initial={{ x: 300 }} animate={{ x: 0 }} className={cl.dashboard_right}>

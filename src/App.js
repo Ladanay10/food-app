@@ -3,12 +3,9 @@ import { Navigate, Route, Routes } from 'react-router-dom';
 import { Login } from './pages/Login/Login';
 import { Root } from './pages/Root';
 import { Register } from './pages/Register/Register';
-import useAuth from './hooks/useAuth';
 
 
 const App = () => {
-	const { currentUser } = useAuth()
-	console.log(currentUser);
 	return (
 		<div className='container'>
 			<Routes>

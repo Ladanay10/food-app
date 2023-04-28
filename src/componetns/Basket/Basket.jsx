@@ -71,7 +71,7 @@ export const Basket = ({ isBasketActive, setIsBasketActive }) => {
 
 						<Order setPayment={setPayment} payment={payment} />
 					</div>
-				) : <Skeleton />}
+				) : <Skeleton skeletonBasket />}
 				{
 					payment && <Payment payment={payment} value={value} setPayment={setPayment} />
 				}

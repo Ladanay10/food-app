@@ -27,14 +27,17 @@
 	flex-direction: column;
 	gap: 10px;
 }
+
 .form label {
-	font-size: 18px;	
+	font-size: 18px;
 }
+
 .info {
 	display: flex;
 	justify-content: space-between;
 	align-items: center;
 }
+
 .select {
 	padding: 10px;
 	background: var(--bg-dark);
@@ -42,9 +45,18 @@
 	border-radius: 8px;
 	color: #fff;
 	z-index: 10;
-} 
+}
+
 .btns {
 	display: flex;
 	margin-left: auto;
 	gap: 15px;
+}
+
+@media screen and (max-width:500px) {
+	.new_item {
+		gap: 10px;
+		width: 250px;
+		height: 230px;
+	}
 }

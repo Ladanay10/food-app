@@ -58,9 +58,18 @@
 	line-height: 140%;
 	color: #ABBBC2;
 }
-.content > button {
+
+.content>button {
 	margin-top: 15px;
 	width: 100%;
 	border: 1px solid var(--primary);
 	padding: 12px 0;
+}
+
+@media screen and (max-width:500px) {
+	.content {
+		width: auto;
+		justify-content: center;
+		
+	}
 }

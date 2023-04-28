@@ -25,6 +25,9 @@
 
 .item img {
 	margin-top: 10px;
+	width: 110px;
+	object-fit: cover;
+	/* height: 110px; */
 }
 
 .dish_title {
@@ -50,3 +53,44 @@
 	gap: 10px;
 }
 
+.form {
+	display: flex;
+	flex-direction: column;
+	gap: 10px;
+}
+
+.form label {
+	font-size: 18px;
+}
+
+.info {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+}
+
+@media screen and (max-width:500px) {
+	.items {
+		gap: 10px;
+		justify-content: center;
+	}
+
+	.item {
+		width: 250px;
+		height: 225px;
+		padding: 5px 0;
+	}
+
+	.item>img {
+		width: 80px;
+		height: 80px;
+	}
+
+	.dish_info {
+		font-size: 14px;
+	}
+
+	.dish_title {
+		font-size: 12px;
+	}
+}

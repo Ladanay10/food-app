@@ -2,25 +2,33 @@ import React from 'react';
 import cl from './skeleton.module.css';
 import { MdOutlineAddShoppingCart } from 'react-icons/md';
 import img from '../../../assets/basket_empty.png';
+import img2 from '../../../assets/select.jpg';
 import settingSkelet from '../../../assets/settingSkeleton.png';
-export const Skeleton = ({ skeletonSetting }) => {
+import { motion } from 'framer-motion';
+export const Skeleton = ({ skeletonSetting, skeletonBasket, skeletonSelect }) => {
 	return (
 		<>
 			{
 				skeletonSetting
 					?
-					<div className={cl.skeleton_setting}>
+					<motion.div initial={{ x: 300 }} animate={{ x: 0 }} className={cl.skeleton_setting}>
 						<h3>It is setting MENU</h3>
 						<p>Please, choose some option</p>
-						<img src={settingSkelet} alt="" />
-					</div>
-					:
-					<div className={cl.skeleton}>
-						<h3>Your basket is empty...</h3>
-						<p>Please, add some dishes</p>
-						<MdOutlineAddShoppingCart size={40} />
-						<img src={img} alt="bg" />
-					</div>
+						<img src={settingSkelet} alt="skelet" />
+					</motion.div> :
+					skeletonBasket ?
+						<motion.div initial={{ x: 200 }} animate={{ x: 0 }} className={cl.skeleton}>
+							<h3>Your basket is empty...</h3>
+							<p>Please, add some dishes</p>
+							<MdOutlineAddShoppingCart size={40} />
+							<img src={img} alt="bg" />
+						</motion.div>
+						:
+						skeletonSelect ? <div className={cl.skeleton_select}>
+							<p>Please, select other type of dish!</p>
+							<img src={img2} alt="" />
+						</div> : <div>
+						</div>
 			}
 		</>
 

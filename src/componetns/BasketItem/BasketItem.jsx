@@ -11,6 +11,10 @@ export const BasketItem = ({ dish, }) => {
 	const [noteValue, setNoteValue] = useState('');
 	const handleChange = (e) => {
 		dispatch({ type: CHANGE_PRICE, id: dish.id, quantity: e.target.value })
+		if (e.target.value === '0') {
+			dispatch({ type: DELETE_ITEM_IN_BASKET, payload: dish.id })
+			toast.dark('Item was deleted');
+		}
 	}
 	const handleDeleteItem = (dish) => {
 		dispatch({ type: DELETE_ITEM_IN_BASKET, payload: dish.id })
@@ -33,7 +37,7 @@ export const BasketItem = ({ dish, }) => {
 							<p>$ {dish.price}</p>
 						</div>
 					</div>
-					<Input onChange={handleChange} small defaultValue={1} />
+					<Input type={'number'} onChange={handleChange} small defaultValue={1} />
 				</div>
 				<Input onChange={handleChangeNote} className={cl.note} type="text" placeholder='Order Note...' />
 			</div>

@@ -88,3 +88,15 @@
 	display: flex;
 	gap: 8px;
 }
+
+@media screen and (max-width:500px) {
+	/* .user {
+		flex: 1;
+	} */
+	.user_info {
+		flex: 1;
+		flex-direction: column;
+		justify-content: flex-start;
+	}
+	
+}

@@ -53,7 +53,8 @@ export const NewItem = () => {
 			setLoading(false);
 			toast.success('Item added');
 			// console.log('all is OK');
-			setIsModalOpen(false)
+			setIsModalOpen(false);
+
 		} catch (error) {
 			toast.error(error.message);
 		}
@@ -98,6 +99,8 @@ export const NewItem = () => {
 							<option value="Hot Dishes">Hot</option>
 							<option value="Cold Dishes">Cold</option>
 							<option value="Soup">Soup</option>
+							<option value="Grill">Grill</option>
+							<option value="Dessert">Dessert</option>
 						</select>
 						<label >Place of dish</label>
 						<select className={cl.select} value={dishPlace} onChange={(e) => setDishPlace(e.target.value)}>

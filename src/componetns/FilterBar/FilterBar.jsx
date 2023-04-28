@@ -10,6 +10,7 @@ import { BsFillPaletteFill } from 'react-icons/bs'
 export const FilterBar = () => {
 	const [isMobileActive, setIsMobileActive] = useState(false);
 	const type = useSelector(state => state.reducerFilter.typeDish)
+	const searchValue = useSelector(state => state.reducerGetItem.searchValue);
 	const dispatch = useDispatch();
 
 	const handleClick = (item) => {
@@ -29,7 +30,7 @@ export const FilterBar = () => {
 			</div>
 			<ul className={isMobileActive ? cl.content_mobile : cl.content} >
 				{titleDishes.map((item) => (
-					<li className={type === item.foodTitle ? cl.active + ' ' + cl.item : cl.item} onClick={() => handleClick(item)} key={item.id}>{item.foodTitle}</li>
+					<li className={searchValue.length >=1 ? cl.item + ' ' + cl.disabled : (type === item.foodTitle ? cl.active + ' ' + cl.item : cl.item)} onClick={() => handleClick(item)} key={item.id}>{item.foodTitle}</li>
 				))}
 			</ul>
 		</>

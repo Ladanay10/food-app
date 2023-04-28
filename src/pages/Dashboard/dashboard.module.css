@@ -160,3 +160,24 @@
 	background: rgba(146, 144, 254, 0.2);
 	color: #9290FE;
 }
+
+
+@media screen and (max-width:768px) {
+	.dashboard {
+		flex-direction: column;
+		flex: 1;
+	}
+	.dashboard_content {
+		padding: 15px;
+	}
+	.dashboard_stats {
+		flex-wrap: wrap;
+		width: 100%;
+	}
+	.order_report {
+		display: none;
+	}
+	.dashboard_right {
+		padding: 10px;
+	}
+}

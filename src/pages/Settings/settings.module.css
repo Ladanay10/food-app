@@ -37,3 +37,15 @@
 	overflow: scroll;
 	
 }
+
+@media screen and (max-width:500px) {
+	.content {
+		flex-direction: column;
+	}
+	.content__right {
+		height: auto;
+	}
+	.settings_options {
+		
+	}
+}

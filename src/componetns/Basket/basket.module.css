@@ -72,9 +72,30 @@
 ::-webkit-scrollbar {
 	display: none;
 }
+
 .icon {
 	display: none;
 }
+
+@media screen and (max-width:768px) {
+	.basket {
+		width: 100vw;
+	}
+
+	.basket_content {
+		position: relative;
+		/* width: 100%; */
+	}
+
+	.icon {
+		z-index: 100000;
+		display: block;
+		position: absolute;
+		right: 63px;
+		top: 3px;
+	}
+}
+
 @media screen and (max-width:500px) {
 	.basket_content {
 		position: relative;
@@ -86,12 +107,6 @@
 		right: 63px;
 		top: 2px;
 	}
-
-	.content {
-		/* display: block; */
-	}
-
-	.basket {}
 
 	.btns {
 		padding-top: 12px;

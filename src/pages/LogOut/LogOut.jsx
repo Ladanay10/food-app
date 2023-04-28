@@ -4,10 +4,13 @@ import { auth } from '../../firebase';
 import { Button } from '../../componetns/UI/Button/Button';
 import { getAuth, signOut } from 'firebase/auth';
 import { useNavigate } from 'react-router-dom';
-import logOut from '../../assets/logOut.webp';
+import glich from '../../assets/glich.png';
+
 export const LogOut = () => {
 	const navigate = useNavigate();
 	const { currentUser } = getAuth();
+	const date = new Date().toDateString();
+
 	const handleLogOut = () => {
 		signOut(auth)
 			.then(() => {
@@ -17,12 +20,15 @@ export const LogOut = () => {
 				console.log(err);
 			});
 	}
-
+	console.log(currentUser);
 	return (
 
 		<div className={cl.content}>
-
-			<h1>LogOut</h1>
+			<img src={glich} className={cl.glich} alt="" />
+			<div className={cl.logOut_info}>
+				<h1>LogOut</h1>
+				<p>{date}</p>
+			</div>
 			<div className={cl.flex}>
 				{currentUser &&
 					<div className={cl.userInfo}>
@@ -35,9 +41,7 @@ export const LogOut = () => {
 					</div>
 
 				}
-				<div className={cl.img}>
-					<img src={logOut} alt="logout" />
-				</div>
+
 			</div>
 
 		</div>

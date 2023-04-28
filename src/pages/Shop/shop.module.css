@@ -10,7 +10,7 @@
 	padding-left: 24px;
 	display: flex;
 	flex-direction: column;
-	flex-basis: 100%;
+	flex: 1;
 }
 
 .basket_icon {
@@ -24,15 +24,11 @@
 		/* width: 100%; */
 		display: none;
 	}
-}
-
-@media screen and (max-width:500px) {
 	.basket_content_active {
 		position: absolute;
 		height: 100%;
 		width: 100%;
 	}
-
 	.basket_icon {
 		display: block;
 		position: absolute;
@@ -54,4 +50,19 @@
 		top: -6px;
 	}
 
+	.basket_icon {
+		display: block;
+		position: absolute;
+		right: 50px;
+		top: 24px;
+		z-index: 2000;
+	}
+}
+
+@media screen and (max-width:500px) {
+	.basket_content_active {
+		position: absolute;
+		height: 100%;
+		width: 100%;
+	}
 }

@@ -41,6 +41,7 @@ export const Order = ({ order }) => {
 						<p>{order.displayName}</p>
 					</div>
 				</div>
+				
 				<div className={cl.menu}>
 					<p>{order.order[0].title}</p>
 				</div>

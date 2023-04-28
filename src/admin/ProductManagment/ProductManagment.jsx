@@ -146,6 +146,8 @@ export const ProductManagment = () => {
 							<option value="Hot Dishes">Hot</option>
 							<option value="Cold Dishes">Cold</option>
 							<option value="Soup">Soup</option>
+							<option value="Grill">Grill</option>
+							<option value="Dessert">Dessert</option>
 						</select>
 						<label >Place of dish</label>
 						<select className={cl.select}
