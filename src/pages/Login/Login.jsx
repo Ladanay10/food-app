@@ -43,13 +43,13 @@ export const Login = () => {
 		e.preventDefault();
 		await signInWithPopup(auth, provider)
 			.then((result) => {
-				// const user = result.user;
-				// setDoc(doc(dataBase, 'users', user.uid), {
-				// 	uid: user.uid,
-				// 	displayName: user.displayName,
-				// 	emailValue: user.email,
-				// 	photoURL: user.photoURL
-				// })
+				const user = result.user;
+				setDoc(doc(dataBase, 'users', user.uid), {
+					uid: user.uid,
+					displayName: user.displayName,
+					emailValue: user.email,
+					photoURL: user.photoURL
+				})
 				toast.success('Login was done!');
 				navigate('/');
 			}).catch((error) => {
