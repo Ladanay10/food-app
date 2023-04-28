@@ -54,7 +54,7 @@ export const Login = () => {
 				navigate('/');
 			}).catch((error) => {
 				const errorMessage = error.message;
-				toast.error('Opps!', errorMessage);
+				toast.error('Opps!', error);
 			})
 	}
 	return (
