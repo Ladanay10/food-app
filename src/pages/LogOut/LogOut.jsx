@@ -5,7 +5,7 @@ import { Button } from '../../componetns/UI/Button/Button';
 import { getAuth, signOut } from 'firebase/auth';
 import { useNavigate } from 'react-router-dom';
 import glich from '../../assets/glich.png';
-
+import ava from '../../assets/Avatar 1.svg';
 export const LogOut = () => {
 	const navigate = useNavigate();
 	const { currentUser } = getAuth();
@@ -35,9 +35,8 @@ export const LogOut = () => {
 
 						<span className={cl.user_name}>{currentUser.displayName}</span>
 						<span className={cl.user_email}>{currentUser.email}</span>
-						<img src={currentUser.photoURL} alt="photoUrl" />
+						<img src={currentUser.photoURL} alt={'photoURL'} />
 						<Button primary onClick={handleLogOut} >LogOut</Button>
-
 					</div>
 
 				}

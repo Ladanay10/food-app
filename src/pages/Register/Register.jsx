@@ -40,7 +40,7 @@ export const Register = () => {
 					await setDoc(doc(dataBase, 'users', user.uid), {
 						uid: user.uid,
 						displayName: nameValue,
-						emailValue: emailValue,
+						emailValue: emailValue ,
 						photoURL: downloadURL
 					})
 				})
