@@ -5,7 +5,6 @@ import { Button } from '../../componetns/UI/Button/Button';
 import { getAuth, signOut } from 'firebase/auth';
 import { useNavigate } from 'react-router-dom';
 import glich from '../../assets/glich.png';
-import ava from '../../assets/Avatar 1.svg';
 export const LogOut = () => {
 	const navigate = useNavigate();
 	const { currentUser } = getAuth();
@@ -22,7 +21,6 @@ export const LogOut = () => {
 	}
 	console.log(currentUser);
 	return (
-
 		<div className={cl.content}>
 			<img src={glich} className={cl.glich} alt="" />
 			<div className={cl.logOut_info}>
@@ -40,10 +38,7 @@ export const LogOut = () => {
 					</div>
 
 				}
-
 			</div>
-
 		</div>
-
 	)
 }

@@ -22,7 +22,7 @@ export const UserOrders = () => {
 						<>
 							{
 								loading ? <Loader /> :
-									order.displayName === currentUser.displayName &&
+									currentUser && order.displayName === currentUser.displayName &&
 									<div key={order.id} className={cl.info_item}>
 										<div className={cl.user_info}>
 											<img src={order.userIMG} alt="ava" />
