@@ -12,9 +12,7 @@
 	border: none;
 	background: transparent;
 }
-.search>input:focus {
-	
-}
+
 @media screen and (max-width:500px) {
 	.search {
 		display: none;
