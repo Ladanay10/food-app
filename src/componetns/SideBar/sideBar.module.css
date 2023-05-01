@@ -49,7 +49,9 @@
 		width: 70px;
 	}
 
-	.icons {}
+	.icons {
+		height: 100%;
+	}
 
 	.iconBlock {
 		padding: 10px;
@@ -67,6 +69,7 @@
 	.content_mobile {
 		display: block;
 		width: 100%;
+		height: 100%;
 		position: absolute;
 	}
 	.content_mobile > .icons {

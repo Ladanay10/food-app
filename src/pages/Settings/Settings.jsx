@@ -11,7 +11,11 @@ import { FaUsersCog } from 'react-icons/fa';
 import { UsersManagment } from '../../admin/UsersManagment/UsersManagment';
 import { Soon } from '../../componetns/Soon/Soon';
 import { motion } from 'framer-motion';
+import useAuth from '../../hooks/useAuth';
+import img from '../../assets/PngItem_4707476.png';
 export const Settings = () => {
+	const { currentUser } = useAuth();
+	const adminId = currentUser.uid === 'lGCjwvvlhfctinvrYJ61LDJZOT02';
 
 	return (
 		<div className={cl.setting_page}>
@@ -44,15 +48,21 @@ export const Settings = () => {
 					/>
 				</motion.div>
 				<motion.div initial={{ x: 300 }} animate={{ x: 0 }} className={cl.content__right}>
-
-					<Routes>
-						<Route />
-						<Route index element={<Skeleton skeletonSetting />} />
-						<Route path='/color-mode' element={<Soon />} />
-						<Route path='/product-managment' element={<ProductManagment />} />
-						<Route path='/orders-managment' element={<OrdersManagment />} />
-						<Route path='/users-managment' element={<UsersManagment />} />
-					</Routes>
+					{
+						adminId ?
+							<Routes>
+								<Route />
+								<Route index element={<Skeleton skeletonSetting />} />
+								<Route path='/color-mode' element={<Soon />} />
+								<Route path='/product-managment' element={<ProductManagment />} />
+								<Route path='/orders-managment' element={<OrdersManagment />} />
+								<Route path='/users-managment' element={<UsersManagment />} />
+							</Routes> :
+							<div className={cl.not_admin}>
+								<h3>Sorry, but you <span>don't have</span> rights</h3>
+								<img src={img} alt="non_rights" />
+							</div>
+					}
 				</motion.div>
 			</div>
 		</div>

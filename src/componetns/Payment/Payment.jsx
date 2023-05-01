@@ -8,7 +8,7 @@ import { useDispatch, useSelector } from 'react-redux';
 import { addDoc, collection } from 'firebase/firestore';
 import { dataBase } from '../../firebase';
 import useAuth from '../../hooks/useAuth';
-import { CLEAR_ITEMS } from '../../store/types';
+import { CLEAR_ITEMS, MAKE_ORDER } from '../../store/types';
 import { toast } from 'react-toastify';
 export const Payment = ({ setPayment, value, payment }) => {
 	const basketItems = useSelector(state => state.reducerAddItem.basketItems)
@@ -35,6 +35,7 @@ export const Payment = ({ setPayment, value, payment }) => {
 			setPayment(false);
 			dispatch({ type: CLEAR_ITEMS });
 			toast.success('Payment has been made');
+			dispatch({ type: MAKE_ORDER })
 		} catch (error) {
 			toast.error('Opps!', error);
 		}

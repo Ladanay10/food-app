@@ -1,9 +1,10 @@
 // import { dishesData } from '../../../data/dishesData'
-import { SEARC_ITEMS, SET_DEFAULT } from '../types';
+import { MAKE_ORDER, SEARC_ITEMS } from '../types';
 
 
 const initialState = {
-	searchValue: ''
+	searchValue: '',
+	makeOrder: false
 };
 
 export function reducerGetItem(state = initialState, action) {
@@ -11,9 +12,11 @@ export function reducerGetItem(state = initialState, action) {
 	// console.log(items);
 	switch (action.type) {
 		case SEARC_ITEMS:
-			return { ...state, searchValue: action.payload}
+			return { ...state, searchValue: action.payload }
 		// case SET_DEFAULT:
 		// 	return { dishes: [] }
+		case MAKE_ORDER:
+			return { ...state, makeOrder: true }
 		default: {
 			return state;
 		}

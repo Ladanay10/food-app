@@ -5,6 +5,7 @@ import { Button } from '../../componetns/UI/Button/Button';
 import { getAuth, signOut } from 'firebase/auth';
 import { useNavigate } from 'react-router-dom';
 import glich from '../../assets/glich.png';
+import { motion } from 'framer-motion';
 export const LogOut = () => {
 	const navigate = useNavigate();
 	const { currentUser } = getAuth();
@@ -23,11 +24,11 @@ export const LogOut = () => {
 	return (
 		<div className={cl.content}>
 			<img src={glich} className={cl.glich} alt="" />
-			<div className={cl.logOut_info}>
+			<motion.div initial={{ x: -300 }} animate={{ x: 0 }} className={cl.logOut_info}>
 				<h1>LogOut</h1>
 				<p>{date}</p>
-			</div>
-			<div className={cl.flex}>
+			</motion.div>
+			<motion.div initial={{ x: 300 }} animate={{ x: 0 }} className={cl.flex}>
 				{currentUser &&
 					<div className={cl.userInfo}>
 
@@ -38,7 +39,7 @@ export const LogOut = () => {
 					</div>
 
 				}
-			</div>
+			</motion.div>
 		</div>
 	)
 }

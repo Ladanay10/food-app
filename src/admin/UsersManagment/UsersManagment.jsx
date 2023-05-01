@@ -5,14 +5,18 @@ import { Loader } from '../../componetns/UI/Loader/Loader';
 import { dataBase } from '../../firebase';
 import useGetData from '../../hooks/useGetData';
 import cl from './usersManagment.module.css';
+// import useAuth from '../../hooks/useAuth';
 
 export const UsersManagment = () => {
 	const { data: users, loading } = useGetData('users');
 	const deleteUser = async (user) => {
 		await deleteDoc(doc(dataBase, 'users', user.id));
 	}
+
 	return (
 		<div className={cl.content}>
+			{/* <div className={adminId ? cl.admin : cl.not_admin}>
+			</div> */}
 			<div className={cl.top_bar}>
 				<h2 className={cl.title2}>
 					Users Management

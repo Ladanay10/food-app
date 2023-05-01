@@ -33,10 +33,14 @@ export const NewItem = () => {
 		setLoading(true);
 		try {
 			const docRef = await collection(dataBase, 'dishes');
-			const storageRef = ref(storage, `dishesImages/${Date.now() + dishImgURL.name} `)
+			const storageRef = ref(storage, `dishesImages/${Date.now()}`);
 			const uploadTask = uploadBytesResumable(storageRef, dishImgURL)
-			uploadTask.on(() => console.log('images not upload'), () => {
+			uploadTask.on((snapshot) => {
+				const progress = (snapshot.bytesTransferred / snapshot.totalBytes) * 100;
+				console.log('Upload is ' + progress + '% done')
+			}, () => {
 				getDownloadURL(uploadTask.snapshot.ref).then(async downloadURL => {
+
 					await addDoc(docRef,
 						{
 							title: dishTitle,
@@ -51,8 +55,8 @@ export const NewItem = () => {
 				})
 			})
 			setLoading(false);
+			setDishImgURL(null);
 			toast.success('Item added');
-			// console.log('all is OK');
 			setIsModalOpen(false);
 
 		} catch (error) {
@@ -101,6 +105,7 @@ export const NewItem = () => {
 							<option value="Soup">Soup</option>
 							<option value="Grill">Grill</option>
 							<option value="Dessert">Dessert</option>
+							<option value="Drinks">Drinks</option>
 						</select>
 						<label >Place of dish</label>
 						<select className={cl.select} value={dishPlace} onChange={(e) => setDishPlace(e.target.value)}>
@@ -113,7 +118,10 @@ export const NewItem = () => {
 					<label>ImageURL</label>
 					<Input
 						type="file"
-						onChange={(e) => setDishImgURL(e.target.files[0])}
+						onChange={(e) => {
+							setDishImgURL(e.target.files[0])
+							console.log('img upload')
+						}}
 					/>
 					<div className={cl.btns}>
 						<Button type='button' onClick={hideModal} >Cancel</Button>

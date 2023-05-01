@@ -9,6 +9,8 @@ export const SET_PLACE = 'SET_PLACE';
 export const SET_TYPE = 'SET_TYPE';
 
 export const SEARC_ITEMS = 'SEARC_ITEMS';
+export const MAKE_ORDER = 'MAKE_ORDER';
+
 export const SET_DEFAULT = 'SET_DEFAULT';
 
 export const GET_ITEMS = 'GET_ITEMS';

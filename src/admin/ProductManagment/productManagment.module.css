@@ -26,7 +26,8 @@
 .item img {
 	margin-top: 10px;
 	width: 110px;
-	object-fit: cover;
+	height: 110px;
+	object-fit: contain;
 	/* height: 110px; */
 }
 

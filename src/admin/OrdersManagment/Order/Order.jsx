@@ -41,26 +41,29 @@ export const Order = ({ order }) => {
 						<p>{order.displayName}</p>
 					</div>
 				</div>
-				
+
 				<div className={cl.menu}>
 					<p>{order.order[0].title}</p>
+					<div className={cl.price}>
+						<p>${order.totalPrice}</p>
+					</div>
 				</div>
-				<div className={cl.price}>
-					<p>${order.totalPrice}</p>
+				<div className={cl.user_action}>
+					<div className={(orderValue === 'Preparing' && cl.status + ' ' + cl.status_prepering)
+						|| (orderValue === 'Completed' && cl.status + ' ' + cl.status_completed)
+						|| (orderValue === 'Pending' && cl.status + ' ' + cl.status_pending || cl.status)}>
+						<h3>{orderValue}</h3>
+					</div>
+					<div className={cl.btns}>
+						<Button onClick={() => setModalIsActive(true)}>
+							<CiEdit />
+						</Button>
+						<Button primary onClick={() => deleteOrder(order)}>
+							<FiTrash />
+						</Button>
+					</div>
 				</div>
-				<div className={(orderValue === 'Preparing' && cl.status + ' ' + cl.status_prepering)
-					|| (orderValue === 'Completed' && cl.status + ' ' + cl.status_completed)
-					|| (orderValue === 'Pending' && cl.status + ' ' + cl.status_pending || cl.status)}>
-					<h3>{orderValue}</h3>
-				</div>
-				<div className={cl.btns}>
-					<Button onClick={() => setModalIsActive(true)}>
-						<CiEdit />
-					</Button>
-					<Button primary onClick={() => deleteOrder(order)}>
-						<FiTrash />
-					</Button>
-				</div>
+
 			</div>
 			<Modal active={modalIsActive} setActive={setModalIsActive}>
 				<select onChange={handleChange}>

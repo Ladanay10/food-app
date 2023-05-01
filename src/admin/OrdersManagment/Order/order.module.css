@@ -25,23 +25,30 @@
 
 .user_info>p {
 	font-weight: 500;
-	color: #E0E6E9;
+	color: var(--text-light);
 }
 
 .menu {
-	position: absolute;
-	left: 185px;
+	position: relative;
+	/* left: 185px; */
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	width: 500px;
+
 }
 
 .menu>p {
 	margin-top: 20px;
 	display: block;
 	max-width: 450px;
+	/* position: absolute; */
+	left: -120px;
 }
 
 .price {
-	position: absolute;
-	right: 280px;
+	/* position: absolute; */
+	right: 30px;
 	width: 100px;
 	text-align: center;
 	color: #E0E6E9;
@@ -49,10 +56,11 @@
 
 .price>p {
 	margin-top: 20px;
+	color: var(--primary);
 }
 
 .status {
-	position: absolute;
+	/* position: absolute; */
 	right: 120px;
 	width: 100px;
 	text-align: center;
@@ -89,14 +97,64 @@
 	gap: 8px;
 }
 
+.user_action {
+	display: flex;
+	position: relative;
+	gap: 20px;
+	align-items: center;
+}
+
 @media screen and (max-width:500px) {
+
 	/* .user {
 		flex: 1;
 	} */
+	.users_wrapper {
+		gap: 5px;
+	}
+
 	.user_info {
 		flex: 1;
 		flex-direction: column;
-		justify-content: flex-start;
+		/* width: unset; */
+		align-items: flex-start;
+		width: 70px;
 	}
-	
+
+	.menu {
+		position: static;
+		flex-direction: column-reverse;
+		align-items: center;
+		justify-content: flex-end;
+	}
+
+	.menu>p {
+		font-size: 12px;
+		margin-top: 0;
+	}
+
+	.price {
+		position: static;
+		margin-top: 0;
+
+	}
+
+	.status {
+		position: static;
+
+	}
+
+	.user_action {
+		flex-direction: column;
+		gap: 0px;
+
+	}
+
+	.btns {
+		margin-top: 5px;
+	}
+
+	.status>h3 {
+		margin-top: 5px;
+	}
 }

@@ -1,8 +1,14 @@
+.content {
+	position: relative;
+
+
+}
 
 .top_bar {
 	padding-bottom: 20px;
 	border-bottom: 1px solid #393C49;
 }
+
 
 .table {
 	margin-top: 20px;
@@ -48,4 +54,43 @@
 	position: absolute;
 	right: 43.5%;
 	width: 100px;
+}
+
+@media screen and (max-width:500px) {
+	.user_info {
+		flex-direction: column;
+		align-items: first baseline;
+		gap: 5px;
+	}
+
+	.user_info>h3 {
+		font-size: 14px;
+		max-width: 105px;
+	}
+
+	.user_info>img {
+		width: 40px;
+		height: 40px;
+	}
+
+	.user_email>h4 {
+		font-size: 10px;
+		max-width: 105px;
+	}
+
+	.user_email {
+		width: 60px;
+	}
+
+	.table {
+		font-size: 16px;
+	}
+
+	.users {
+		margin-top: 10px;
+	}
+
+	.btns>button {
+		padding: 5px;
+	}
 }

@@ -3,6 +3,7 @@
 	height: 100%;
 }
 
+
 .top_bar {
 	padding-bottom: 20px;
 	border-bottom: 1px solid #393C49;
@@ -18,7 +19,7 @@
 .table1 {
 	display: flex;
 	align-items: center;
-	gap: 150px;
+	gap: 210px;
 	flex: 1;
 }
 
