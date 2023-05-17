@@ -10,7 +10,7 @@ export const Info = () => {
 		<div className={cl.info}>
 			<div className={cl.info_content}>
 				<h1 className={cl.title}>
-					Jaegar Resto
+					Food App
 				</h1>
 				<span className={cl.date}>
 					{date}
