@@ -1,74 +1,63 @@
-import React, { useEffect, useState } from 'react';
-import { Button } from '../UI/Button/Button';
-import cl from './mostOrdered.module.css';
-import img from '../../assets/dish1.svg';
-import img2 from '../../assets/dish2.svg';
-import img3 from '../../assets/Image 4.png';
-import useGetData from '../../hooks/useGetData';
+import React, { useEffect, useMemo } from "react";
+import { Button } from "../UI/Button/Button";
+import cl from "./mostOrdered.module.css";
+import useGetData from "../../hooks/useGetData";
+
 export const MostOrdered = () => {
-	const { data: dataOrders, loading } = useGetData('orders');
+  const { data: dataOrders, loading } = useGetData("orders");
 
-	const [count1, setCount1] = useState(0);
-	const [count2, setCount2] = useState(0);
-	const [count3, setCount3] = useState(0);
-	useEffect(() => {
-		for (let i = 0; i < dataOrders.length; i++) {
-			const element = dataOrders[i];
-			element.order.map((item) => item.title).forEach(element => {
-				switch (element) {
-					case 'Spicy seasoned seafood noodles':
-						setCount1(prev => prev + 1);
-						break;
-					case 'Beef dumpling in hot and sour soup ':
-						setCount2(prev => prev + 1);
-						break;
-					case 'Hot spicy fried rice with omelet':
-						setCount3(prev => prev + 1);
-						break;
-					default:
-						break;
-				}
-			});
-		}
-	}, [loading])
+  const mostOrderedDishes = useMemo(() => {
+    const dishCounts = {};
 
-	return (
-		<>
-			<div className={cl.content}>
-				<div className={cl.top_content}>
-					<h1>Most Ordered</h1>
-					<select className={cl.select}>
-						<option >Filter</option>
-						<option value="complete">Today</option>
-						<option value="preparing">Last week</option>
-						<option value="pending">Last mounth</option>
-					</select>
-				</div>
-				<div className={cl.items}>
-					<div className={cl.item}>
-						<img src={img} alt="dish" />
-						<div className={cl.item_info}>
-							<h2>Spicy seasoned seafood noodles</h2>
-							<p>{count1} dishes ordered</p>
-						</div>
-					</div>
-					<div className={cl.item}>
-						<img src={img2} alt="dish" />
-						<div className={cl.item_info}>
-							<h2>Beef dumpling in hot and sour soup</h2>
-							<p>{count2} dishes ordered</p>
-						</div>
-					</div>
-					<div className={cl.item}>
-						<img src={img3} alt="dish" />
-						<div className={cl.item_info}>
-							<h2>Spicy seasoned seafood noodles</h2>
-							<p>{count3} dishes ordered</p>
-						</div>
-					</div>
-				</div>
-				<Button >View All</Button>
-			</div>
-		</>
-	)
-}
+    dataOrders.forEach((order) => {
+      order.order.forEach((item) => {
+        const { title, quantity } = item;
+        const count = parseInt(quantity, 10) || 0;
+
+        if (dishCounts[title]) {
+          dishCounts[title].count += count;
+        } else {
+          dishCounts[title] = {
+            count: count,
+            img: item.img,
+          };
+        }
+      });
+    });
+
+    return Object.entries(dishCounts)
+      .map(([title, { count, img }]) => ({ title, count, img }))
+      .sort((a, b) => b.count - a.count)
+      .slice(0, 3);
+  }, [dataOrders]);
+
+  if (loading) {
+    return <div>Loading...</div>;
+  }
+
+  return (
+    <div className={cl.content}>
+      <div className={cl.top_content}>
+        <h1>Замовлені</h1>
+        <select className={cl.select}>
+          <option>Фільтр</option>
+          <option value="complete">Сьогодні</option>
+          <option value="preparing">За минулий тиждень</option>
+          <option value="pending">За минулий місяць</option>
+        </select>
+      </div>
+      <div className={cl.items}>
+        {mostOrderedDishes.map((dish, index) => (
+          <div key={index} className={cl.item}>
+            <img src={dish.img} alt="dishItemImg" />
+            <div className={cl.item_info}>
+              <h2>{dish.title}</h2>
+              <p>{dish.count} страв замовлено</p>
+            </div>
+          </div>
+        ))}
+      </div>
+      <Button>Переглянути всі</Button>
+    </div>
+  );
+};

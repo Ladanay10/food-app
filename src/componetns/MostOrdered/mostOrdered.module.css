@@ -35,8 +35,9 @@
 }
 
 .item>img {
-	width: 61px;
+	width: 55px;
 	height: 55px;
+	object-fit: contain;
 }
 
 .item_info {

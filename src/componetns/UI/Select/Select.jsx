@@ -1,19 +1,27 @@
-import React from 'react';
-import { useDispatch } from 'react-redux';
-import { SET_PLACE } from '../../../store/types';
-import cl from './select.module.css';
+import React, { useCallback } from "react";
+import { useDispatch } from "react-redux";
+import { SET_PLACE } from "../../../store/types";
+import cl from "./select.module.css";
 
 export const Select = () => {
-	const dispatch = useDispatch();
-	
-	const handleChange = (e) => {
-		dispatch({ type: SET_PLACE, place: e.target.value })
-	}	
-	return (
-		<select className={cl.select} onChange={handleChange}>
-			<option value="Dine In">Dine In</option>
-			<option value="To Go">To Go</option>
-			<option value="Delivery">Delivery</option>
-		</select>
-	)
-}
+  const dispatch = useDispatch();
+
+  const options = ["Dine In", "To Go", "Delivery"];
+
+  const handleChange = useCallback(
+    ({ target: { value } }) => {
+      dispatch({ type: SET_PLACE, place: value });
+    },
+    [dispatch]
+  );
+
+  return (
+    <select className={cl.select} onChange={handleChange}>
+      {options.map((option, index) => (
+        <option key={index} value={option}>
+          {option}
+        </option>
+      ))}
+    </select>
+  );
+};
